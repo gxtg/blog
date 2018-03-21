@@ -1,0 +1,60 @@
+@import "variable.styl"
+
+a
+  font-size $html-font-size
+  img
+    border 0
+
+.clearfix
+      display inline-block
+      &::after
+          display: block
+          content: ""
+          height: 0
+          line-height: 0
+          clear: both
+
+html, body 
+  min-height 100vh
+
+body
+  width 100%
+  line-height 1
+  font-family 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
+  font-size $html-font-size
+  user-select: none
+  -webkit-tap-highlight-color: transparent
+  background: $color-background
+  color $color-text
+
+  button
+    outline: none
+    border: none
+    cursor: pointer
+  
+  :focus
+    outline 0
+    
+  img 
+    border none
+  
+  h1, h2, h3, h4, strong
+      font-weight 400
+      color $color-text-d
+  
+  code, pre
+      font-family $code-font
+      font-size $code-font-size
+      background-color $codebg
+      -webkit-font-smoothing initial
+      -moz-osx-font-smoothing initial
+  
+  code
+    color #525252
+    padding 3px 5px
+    margin 0 2px
+    border-radius 2px
+  
+  em
+    color $color-light
+  

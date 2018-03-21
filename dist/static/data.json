@@ -1,0 +1,45 @@
+{
+    "article": [
+        {
+            "index": 0,
+            "title": "我的第一个博客",
+            "time": "2018/3/6 15:00",
+            "name": "first.md",
+            "tag": "vue"
+        },
+        {
+            "index": 1,
+            "title": "我的第二个博客",
+            "time": "2018/3/7 15:00",
+            "name": "second.md",
+            "tag": "vue"
+        }
+    ],
+    "tag": {
+        "vue": [0, 1],
+        "css": []
+    },
+    "work": {
+        "demo": [
+            {
+                "name": "流光文字",
+                "discription": "流光文字",
+                "url": "https://gxtg.github.io/blog/static/image/font.png",
+                "aurl": "https://gxtg.github.io/front-end/text1"
+            }
+        ],
+        "game": [
+
+        ],
+        "system": [
+            {
+                "name": "仿豆瓣FM",
+                "discription": "仿doubanFM",
+                "url": "https://gxtg.github.io/blog/static/image/doubanFM.png",
+                "aurl": "https://gxtg.github.io/front-end/douban"
+            }
+        ],
+        "other": [
+        ]
+    }
+}
