@@ -7,7 +7,7 @@ export const article = blogData.article
 function getUrl(article) {
   let url = new Array(article.length)
   for (let index = 0; index < article.length; index++) {
-    url[index] = 'https://gxtg.github.io/blog/static/article/' + article[index].name
+    url[index] = 'static/article/' + article[index].name
   }
   return url.map(function (value) {
     return axios.get(value).then(res => {

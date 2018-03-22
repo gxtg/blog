@@ -43,7 +43,7 @@ export default {
     fetchData() {
       let index = this.$route.params.id
       this.post = blogData.article[index]
-      let url = 'https://gxtg.github.io/blog/static/article/' + this.post.name
+      let url = 'static/article/' + this.post.name
       this.$http(url).then(res => {
         this.content = markdown(res.data)
       })

@@ -24,7 +24,7 @@
             {
                 "name": "流光文字",
                 "discription": "流光文字",
-                "url": "https://gxtg.github.io/blog/static/image/font.png",
+                "url": "static/image/font.png",
                 "aurl": "https://gxtg.github.io/front-end/text1"
             }
         ],
@@ -35,7 +35,7 @@
             {
                 "name": "仿豆瓣FM",
                 "discription": "仿doubanFM",
-                "url": "https://gxtg.github.io/blog/static/image/doubanFM.png",
+                "url": "static/image/doubanFM.png",
                 "aurl": "https://gxtg.github.io/front-end/douban"
             }
         ],

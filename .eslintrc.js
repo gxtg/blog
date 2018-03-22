@@ -32,6 +32,7 @@ module.exports = {
     'no-irregular-whitespace': 0,
     'no-multi-spaces': 0,
     'no-multiple-empty-lines': 0,
-    'space-infix-ops': 0
+    'space-infix-ops': 0,
+    'import/no-unresolved': 0,
   }
 }
