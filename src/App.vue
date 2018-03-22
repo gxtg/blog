@@ -28,11 +28,11 @@ export default {
     }
     @media screen and (min-width: 750px) {
       width 100%
-      padding 25px
+      padding 20px 40px
     }
     @media screen and (min-width: 1190px) {
       max-width 70%
-      min-width 800px
+      min-width 1000px
       padding 35px
     }
 </style>

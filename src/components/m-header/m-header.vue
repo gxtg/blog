@@ -79,13 +79,24 @@ export default {
     background transparent 
     box-shadow 0 0 4px rgba(0, 0, 0, .25) 
     .header-container
-      max-width 70%
-      min-width 800px
       height $header-height
       margin 0 auto
       padding $header-padding 0
-      @media screen and (max-width: 480px) {
+      @media screen and (mix-width: 350px) {
+        width 100%
         padding 6px 0 18px 0
+      }
+      @media screen and (min-width: 410px){
+        width 100%
+        padding 7px 0 19px 0
+      }
+      @media screen and (min-width: 750px){
+        width 100%
+        padding 20px
+      }
+      @media screen and (min-width: 1190px){
+        max-width 70%
+        min-width 1000px
       }
       .header-logo
         display inline-block

@@ -25,8 +25,9 @@ export default {}
     height 100vh
     width 100vw
     overflow hidden
-    background-image url('../../common/img/fj.jpg')
+    background-image url('../../common/img/fj.jpeg')
     background-size auto 100%
+    background-repeat no-repeat
     .page-title
       position absolute
       top 50%
