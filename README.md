@@ -1,10 +1,20 @@
-# my-blog
+# blog
 
-> 我的博客
+> 使用vue搭建的静态轻博客，支持markdown语法。
+
+## 技术栈
+
+    1. Vue&&vue-router
+    2. axios
+    3. stylus
+    4. marked
 
 ## Build Setup
 
 ``` bash
+# clone or download repertory
+git clone git@github.com:gxtg/blog.git
+
 # install dependencies
 npm install
 
@@ -13,9 +23,9 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 注意
+
+博客使用了很多es6新特性，请安装6.0以上的node。
+本人渣渣一个，博客使用过程中可能会遇到问题，敬请谅解。
