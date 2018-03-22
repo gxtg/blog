@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import blogData from '../../../static/data.json'
+import blogData from 'static/data.json'
 
 export default {
   data() {

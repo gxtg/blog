@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {markdown} from './markdown'
-import blogData from '../../../static/data.json'
+import blogData from 'static/data.json'
 
 export const article = blogData.article
 
