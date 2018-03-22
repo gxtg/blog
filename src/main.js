@@ -1,5 +1,4 @@
 import Vue from 'vue'
-// import ElementUi from 'element-ui'
 import App from './App'
 import router from './router/index'
 
