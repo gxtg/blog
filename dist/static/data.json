@@ -2,16 +2,9 @@
     "article": [
         {
             "index": 0,
-            "title": "我的第一个博客",
-            "time": "2018/3/6 15:00",
-            "name": "first.md",
-            "tag": "vue"
-        },
-        {
-            "index": 1,
-            "title": "我的第二个博客",
-            "time": "2018/3/7 15:00",
-            "name": "second.md",
+            "title": "关于写这个博客模板碰到的一些问题汇总",
+            "time": "2018/3/26 21:55",
+            "name": "博客.md",
             "tag": "vue"
         }
     ],
