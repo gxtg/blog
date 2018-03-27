@@ -1,9 +1,33 @@
 @import "variable.styl"
 
+html, body, div, article, footer, header, nav, ul, img, blockquote, q
+  margin 0
+  padding 0
+  border 0
+  font-weight normal
+  variable-align baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section
+  display: block
+
 a
   font-size $html-font-size
+  color #7e8c8d
+  text-decoration none
   img
     border 0
+
+blockquote, q
+  quotes: none
+
+q
+  text-indent 2em
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: none
 
 .clearfix
       display inline-block
@@ -24,6 +48,7 @@ body
   font-size $html-font-size
   user-select: none
   -webkit-tap-highlight-color: transparent
+  -webkit-text-size-adjust: none
   background: $color-background
   color $color-text
 
@@ -38,7 +63,7 @@ body
   img 
     border none
   
-  h1, h2, h3, h4, strong
+  h1, h2, h3, h4
       font-weight 400
       color $color-text-d
   

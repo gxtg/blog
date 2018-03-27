@@ -9,8 +9,8 @@
     </article>
     <footer>
       <div>
-        <span v-if="pre" class="pre"><router-link :to="{name: 'post', params: {id: post.index-1}}">上篇：{{ postPre }}</router-link></span>
-        <span v-if="next" class="next"><router-link :to="{name: 'post', params: {id: post.index+1}}">下篇：{{ postNext }}</router-link></span>
+        <span class="pre"><router-link :to="{name: 'post', params: {id: post.index-1}}">{{ postPre }}</router-link></span>
+        <span class="next"><router-link :to="{name: 'post', params: {id: post.index+1}}">{{ postNext }}</router-link></span>
       </div>
     </footer>
   </div>
@@ -18,55 +18,46 @@
 
 <script>
 import {markdown} from '../../common/js/markdown'
-import blogData from 'static/data.json'
 
 export default {
   data() {
     return {
       post: {},
       content: 0,
-      next: true,
-      pre: true
+      blogData: {}
     }
   },
   created() {
     this.fetchData()
-    this.show()
   },
   watch: {
     '$route' (to, from) {
       this.fetchData()
-      this.show()
     }
   },
   methods: {
     fetchData() {
       let index = this.$route.params.id
-      this.post = blogData.article[index]
-      let url = 'static/article/' + this.post.name
-      this.$http(url).then(res => {
-        this.content = markdown(res.data)
+      this.$http('static/data.json').then(res => {
+        this.blogData = res.data
+        this.post = this.blogData.article[index]
+        let url = 'static/article/' + this.post.name
+        this.$http(url).then(res => {
+          this.content = markdown(res.data)
+        }) 
       })
-    },
-    show() {
-      if (this.post.index === 0) {
-        this.next = true
-        this.pre = false
-      } else if (this.post.index === blogData.article.length - 1) {
-        this.next = false
-        this.pre = true
-      } else {
-        this.pre = true
-        this.next =true
-      }
     }
   },
   computed: {
     postPre: function () {
-      return blogData.article[this.post.index - 1].title
+      if (this.post.index - 1 > -1) {
+        return '上篇：' + this.blogData.article[this.post.index - 1].title
+      }
     },
     postNext: function () {
-      return blogData.article[this.post.index + 1].title
+      if (this.post.index + 1 < this.blogData.article.length) {
+        return '下篇：' + this.blogData.article[this.post.index + 1].title
+      }
     }
   }
 }

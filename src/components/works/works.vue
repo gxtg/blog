@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import blogData from 'static/data.json'
 
 export default {
   data() {
@@ -26,7 +25,9 @@ export default {
     }
   },
   created() {
-    this.works = blogData.work
+    this.$http('static/data.json').then(res => {
+      this.works = res.data.work
+    })
   }
 }
 </script>

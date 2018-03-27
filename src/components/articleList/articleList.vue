@@ -14,40 +14,42 @@
     </div>
     <footer class="footer">
       <div>
-        <span v-if="pre"><router-link :to="{name: 'article', params: {id: this.$route.params.id - 1}}">上一页</router-link></span>
-        <span v-if="next"><router-link :to="{name: 'article', params: {id: this.$route.params.id + 1}}">下一页</router-link></span>
+        <span><router-link :to="{name: 'article', params: {id: this.$route.params.id - 1}}">{{prePage}}</router-link></span>
+        <span><router-link :to="{name: 'article', params: {id: this.$route.params.id + 1}}">{{nextPage}}</router-link></span>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
-import {article, getArticle} from '../../common/js/article'
-
+import {getArticle} from '../../common/js/article'
 
 export default {
   data() {
     return {
+      article: [],
       articles: [],
-      next: true,
-      pre: true,
       content: []
     }
   },
   created() {
-    this.articles = this.getPage()
-    getArticle(this.articles).then(results => {
-      this.content = results
-    })
-    this.turnPage()
-  },
-  watch: {
-    '$route' (to, from) {
+    this.$http('static/data.json').then(res => {
+      this.article = res.data.article
       this.articles = this.getPage()
       getArticle(this.articles).then(results => {
         this.content = results
       })
-      this.turnPage()
+    })
+  },
+  watch: {
+    '$route' (to, from) {
+      this.$http('static/data.json').then(res => {
+        this.article = res.data
+        this.articles = this.getPage()
+        getArticle(this.articles).then(results => {
+          this.content = results
+        })
+      })
     }
   },
   methods: {
@@ -55,26 +57,26 @@ export default {
       return this.content[index]
     },
     getPage() {
-      if (this.$route.params.id * 8 > article.length) {
+      if (this.$route.params.id * 8 > this.article.length) {
         let start = (this.$route.params.id - 1) * 8
-        let end = article.length
-        return article.slice(start, end)
+        let end = this.article.length
+        return this.article.slice(start, end)
       } else {
         let start = (this.$route.params.id - 1) * 8
         let end = this.$route.params.id * 8 - 1
-        return article.slice(start, end)
+        return this.article.slice(start, end)
+      }
+    }
+  },
+  computed: {
+    prePage: function () {
+      if (this.$route.params.id > 1) {
+        return '上一页' 
       }
     },
-    turnPage() {
-      if (this.$route.params.id > 1) {
-        this.pre = true
-      } else {
-        this.pre = false
-      }
-      if (this.$route.params.id > 1 && this.$route.params.id < article.length / 8) {
-        this.next = true
-      } else {
-        this.next = false
+    nextPage: function () {
+      if (this.$route.params.id > 1 && this.$route.params.id < this.article.length / 8) {
+        return '下一页'
       }
     }
   }
@@ -89,9 +91,8 @@ export default {
     border-bottom 1px solid rgba(0, 0, 0, .1)
     .article-item 
       width 100%
-      height 300px
+      height 25em
       header
-        height 70px
         .article-title
           color $color-text-d
           font-size 22.5px
@@ -100,7 +101,7 @@ export default {
         .article-date
           color $color-text-l
           font-size 13px
-          padding 18px 0 0 18px
+          padding-left 18px
           i
             width 12px
             height 12px
@@ -114,11 +115,13 @@ export default {
             border-right 1px solid $color-text-l
             text-decoration underline
       .article-content
-        height 13em
+        height 14.3em
         padding 0 10px
         line-height: 2em;
         color: #333;
         overflow hidden
+        p
+          text-indent 2em
       footer
         padding 10px 0 0 10px
         a

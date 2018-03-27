@@ -18,20 +18,19 @@
 </template>
 
 <script>
-import blogData from 'static/data.json'
 
 export default {
   data() {
     return {
-      tags: blogData.tag,
+      tags: {},
       tagContent: []
     }
   },
   created() {
-    this.tagContent = blogData.article
-  },
-  methods: {
-
+    this.$http('static/data.json').then(res => {
+      this.tags = res.data.tag
+      this.tagContent = res.data.article
+    })
   }
 }
 </script>
