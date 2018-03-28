@@ -120,10 +120,8 @@ export default {
         line-height: 2em;
         color: #333;
         overflow hidden
-        p
-          text-indent 2em
       footer
-        padding 10px 0 0 10px
+        padding-left 10px
         a
           color $color-text-l
           font-size 13px

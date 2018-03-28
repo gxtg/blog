@@ -3,15 +3,15 @@
     <div class="tag-list">
       <h2>All tag</h2>
       <div class="tag-item tag-m">
-        <a :href="'#' + key" v-for="(tag, key) in tags" :key="tag.index">
+        <a :href="'#' + key" v-for="(tag, key) in tags" :key="key">
           {{key}}
         </a>
       </div>
     </div>
-    <div class="tag-list" v-for="(tag, key) in tags" :key="tag.index" :id="key">
+    <div class="tag-list" v-for="(tag, key) in tags" :key="key" :id="key">
       <h2>{{key}}</h2>
       <div class="tag-item">
-        <router-link v-for="item in tag" :to="{name: 'post', params: {id: tagContent[item].index}}" :key="item.index">{{tagContent[item].title}}</router-link>
+        <router-link v-for="item in tag" :to="{name: 'post', params: {id: tagContent[item]}}" :key="item.index">{{tagContent[item].title}}</router-link>
       </div>
     </div>
   </div>

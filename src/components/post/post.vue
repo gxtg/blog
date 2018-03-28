@@ -24,7 +24,7 @@ export default {
     return {
       post: {},
       content: 0,
-      blogData: {}
+      article: []
     }
   },
   created() {
@@ -39,8 +39,8 @@ export default {
     fetchData() {
       let index = this.$route.params.id
       this.$http('static/data.json').then(res => {
-        this.blogData = res.data
-        this.post = this.blogData.article[index]
+        this.article = res.data.article
+        this.post = this.article[index]
         let url = 'static/article/' + this.post.name
         this.$http(url).then(res => {
           this.content = markdown(res.data)
@@ -51,12 +51,12 @@ export default {
   computed: {
     postPre: function () {
       if (this.post.index - 1 > -1) {
-        return '上篇：' + this.blogData.article[this.post.index - 1].title
+        return '上篇：' + this.article[this.post.index - 1].title
       }
     },
     postNext: function () {
-      if (this.post.index + 1 < this.blogData.article.length) {
-        return '下篇：' + this.blogData.article[this.post.index + 1].title
+      if (this.post.index + 1 < this.article.length) {
+        return '下篇：' + this.article[this.post.index + 1].title
       }
     }
   }
