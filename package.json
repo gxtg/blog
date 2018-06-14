@@ -6,18 +6,16 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js",
     "dev-admin": "cross-env NODE_ENV_TYPE=admin webpack-dev-server --config build/webpack.dev.conf.js",
     "build-admin": "cross-env NODE_ENV_TYPE=admin node build/build.js",
     "dev-nuxt": "node code/clientNuxt/index.js",
     "build-nuxt": "nuxt build",
     "start": "nuxt start",
-    "dev-server": "cross-env NODE_ENV=development nodemon code/server/index.js",
-    "deploy": "pm2 deploy code/clientNuxt/ecosystem.config.js production"
+    "dev-server": "cross-env NODE_ENV=development nodemon code/server/index.js"
   },
   "config": {
     "nuxt": {
-      "port": "8000"
+      "port": "80"
     }
   },
   "dependencies": {
