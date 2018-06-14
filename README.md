@@ -1,8 +1,8 @@
-#[南城](http://120.78.220.145)
+# [南城](http://120.78.220.145)
 
-> + admin:  code/admin
-+ client:  code/clientNuxt
-+ server:  code/server
+> admin:  code/admin
+client:  code/clientNuxt
+server:  code/server
 
 
 ## 主要技术栈
