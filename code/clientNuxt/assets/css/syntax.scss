@@ -1,0 +1,428 @@
+.gutter pre {
+  color: #999;
+}
+  
+pre {
+  color: #525252;
+  .function .keyword,
+  .constant {
+    color: #0092db;
+  }
+  .keyword,
+  .attribute {
+    color: #e96900;
+  }
+  .number,
+  .literal {
+    color: #AE81FF;
+  }
+  .tag,
+  .tag .title,
+  .change,
+  .winutils,
+  .flow,
+  .lisp .title,
+  .clojure .built_in,
+  .nginx .title,
+  .tex .special {
+    color: #2973b7;
+  }
+  .class .title {
+    color: green;
+  }
+  .symbol,
+  .symbol .string,
+  .value,
+  .regexp {
+    color: #42b983;
+  }
+  .title {
+    color: #A6E22E;
+  }
+  .tag .value,
+  .string,
+  .subst,
+  .haskell .type,
+  .preprocessor,
+  .ruby .class .parent,
+  .built_in,
+  .sql .aggregate,
+  .django .template_tag,
+  .django .variable,
+  .smalltalk .class,
+  .javadoc,
+  .django .filter .argument,
+  .smalltalk .localvars,
+  .smalltalk .array,
+  .attr_selector,
+  .pseudo,
+  .addition,
+  .stream,
+  .envvar,
+  .apache .tag,
+  .apache .cbracket,
+  .tex .command,
+  .prompt {
+    color: #42b983;
+  }
+  .comment,
+  .java .annotation,
+  .python .decorator,
+  .template_comment,
+  .pi,
+  .doctype,
+  .deletion,
+  .shebang,
+  .apache .sqbracket,
+  .tex .formula {
+    color: #b3b3b3;
+  }
+  .coffeescript .javascript,
+  .javascript .xml,
+  .tex .formula,
+  .xml .javascript,
+  .xml .vbscript,
+  .xml .css,
+  .xml .cdata {
+    opacity: 0.5;
+  }
+}
+
+#htmlcontent {
+  margin: $lg-pad 0;
+  color: $black;
+  word-wrap: break-word;
+
+  .demo {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 25px 35px;
+    margin-top: 1em;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: auto;
+  }
+
+  a {
+    color: $link-color;
+    margin: 0 .1rem;
+
+    &.c-link {
+      color: #7f8c8d;
+    }
+
+    &.image-link {
+      margin: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .image-package {
+    text-align: center;
+    width: 92%;
+    margin: 0 auto 1rem auto;
+
+    .img-caption {
+      min-width: 10%;
+      max-width: 80%;
+      min-height: 22px;
+      display: inline-block;
+      padding: 6px;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      font-size: 14px;
+      color: #969696;
+      line-height: 1.2;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    margin: .5rem auto;
+    display: block;
+    text-align: center;
+    border-radius: $radius;
+    transition: all .25s;
+    opacity: .9;
+
+    &.img-pop {
+      cursor: zoom-in;
+    }
+  }
+
+  p {
+    word-spacing: 0.05em;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+
+    &.text-center {
+      text-align: center;
+    }
+
+    &.text-right {
+      text-align: right;
+    }
+  }
+  p.tip {
+    padding: 12px 24px 12px 30px;
+    margin: 2em 0;
+    border-left: 4px solid $red;
+    background-color: $code-bg;
+    position: relative;
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+    &::before {
+      position: absolute;
+      top: 14px;
+      left: -12px;
+      background-color: $red;
+      color: #fff;
+      content: "!";
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 20px;
+      font-weight :bold;
+      font-size: 14px;
+    }
+  }
+
+  iframe {
+    margin-bottom: 1rem;
+    background: #000;
+
+    &.music {
+      background: transparent;
+      width: 100%;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-left: 0;
+    line-height: 1.5;
+    font-weight: 600;
+    text-indent: 0;
+
+    &:target{
+      padding-top: 4.5rem;
+    }
+  }
+
+  h1 {
+    margin: 0 0 .5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    a {
+      &:hover {
+        border-bottom: 2px solid $green;
+      }
+    }
+  }
+  h3 {
+    font-size: 1.2rem;
+    margin: .8rem 0 1rem 0;
+    position: relative;
+    text-indent: 1.2rem;
+    &::before {
+      content: "#";
+      color: $green;
+      position: absolute;
+      left: -1.2rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  h4 {
+    margin: .8rem 0;
+  }
+  hr {
+    height: 0.1rem;
+    background: #e1e4e8;
+    border: 0;
+  }
+
+  blockquote {
+    margin: 1.8rem 0;
+    padding-left: .18rem;
+    border-left: .2rem solid $green;
+    p {
+      font-weight: 600;
+      margin-left: 0;
+      text-indent: 0rem;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+
+    >li {
+      line-height: 1.2rem;
+      padding: .5rem;
+      list-style-type: disc;
+
+      >p {
+        text-indent: 0;
+      }
+
+      >ul {
+
+        li {
+          list-style-type: circle;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  table {
+    font-size: .8rem;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+      background: $module-bg;
+      text-align: left;
+    }
+
+    th, td {
+      border: 1px solid $border-color;
+      padding: .8rem .5rem;
+      line-height: 1.5rem;
+    }
+
+    tr:nth-child(2n) {
+      background: $module-bg;
+    }
+
+    td {
+      min-width: 7.5rem;
+    }
+  }
+
+  code {
+    padding: .2rem .4rem;
+    margin: 0;
+    font-size: 85%;
+    border-radius: $radius;
+    background-color: $module-hover-bg;
+  }
+
+  pre {
+    position: relative;
+    margin-bottom: .8rem;
+    padding: .8em .8em .4em;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: $code-bg;
+    border-radius: 3px;
+    word-wrap: normal;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &:hover::-webkit-scrollbar {
+      display: block;
+    }
+    >code {
+      margin: 0;
+      padding: 1.2rem, 1.4rem;
+      float: left;
+      width: 100%;
+      height: 100%;
+      display: block;
+      line-height: 1.5rem;
+      background-color: transparent;
+      white-space: pre;
+
+      &.lang-html, 
+      &.lang-javascript, 
+      &.lang-bash, 
+      &.lang-css, 
+      &.lang-java {
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: #ccc;
+          text-align: right;
+          font-size: .75em;
+          padding: 5px 10px 0;
+          line-height: 15px;
+          height: 15px;
+          font-weight: 600;
+        }
+      }
+      &.lang-html::after {
+        content: 'HTML';
+      }
+      &.lang-javascript::after {
+        content: 'JS';
+      }
+      &.lang-bash:after {
+        content: 'Shell';
+      }
+      &.lang-css::after {
+        content: 'CSS';
+      }
+      &.lang-java::after {
+        content: 'Java';
+      }
+    }
+  }
+
+  em {
+    color: $light;
+  }
+
+  span.light {
+    color: $light;;
+  }
+  span.info {
+    font-size: .85em;
+    display: inline-block;
+    vertical-align: middle;
+    width: 280px;
+    margin-left: 20px;
+  }
+  figure, p {
+    margin: 1.2em 0;
+  }
+}
